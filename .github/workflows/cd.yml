@@ -41,4 +41,4 @@ jobs:
           username : cocopam
           key: ${{secrets.SSH_KEY}}
           script: |
-            sh /home/cocopam/workspace/django-actions-test/docker.sh
+            sh /home/cocopam/workspace/django-actions-test/deploy.sh
