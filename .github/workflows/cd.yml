@@ -35,7 +35,7 @@ jobs:
 
 
       - name: docker run
-        uses: appleboy/ssh-actions@master
+        uses: appleboy/ssh-action@master
         with:
           host: cspc.me
           username : cocopam
