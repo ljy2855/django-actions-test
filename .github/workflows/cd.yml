@@ -39,6 +39,6 @@ jobs:
         with:
           host: cspc.me
           username : cocopam
-          key: ${{secret.SSH_KEY}}
+          key: ${{secrets.SSH_KEY}}
           script: |
             sh /home/cocopam/workspace/django-actions-test/docker.sh
