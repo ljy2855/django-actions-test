@@ -28,7 +28,6 @@ jobs:
         with:
           host: cspc.me
           username : cocopam
-          key: ${{secrets.SSH_KEY}}
           password: ${{secrets.PASSWORD}}
           script: |
             docker rm -f django-test
