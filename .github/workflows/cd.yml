@@ -48,6 +48,6 @@ jobs:
         with:
           host: cspc.me
           username : cocopam
-          key: ${{secrets.SSH_KEY}}
+          password: ${{secrets.PASSWORD}}
           script: |
             sh /home/cocopam/workspace/django-actions-test/deploy.sh
