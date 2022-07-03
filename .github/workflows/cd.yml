@@ -32,4 +32,4 @@ jobs:
           script: |
             cd ${{secrets.PATH}}
             git pull origin master
-            sh /home/cocopam/workspace/django-actions-test/deploy.sh
+            sh deploy.sh
