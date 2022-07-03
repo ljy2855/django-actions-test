@@ -23,31 +23,13 @@ jobs:
 
       - uses: actions/checkout@v3
 
-      - name : docker stop
+      - name: Deploy and Run
         uses: appleboy/ssh-action@master
         with:
           host: cspc.me
           username : cocopam
           password: ${{secrets.PASSWORD}}
           script: |
-            docker rm -f django-test
-
-
-      - name : code deploy
-        uses : burnett01/rsync-deployments@5.2
-        with :
-          switches : -avzr --delete
-          remote_path : /home/cocopam/workspace/django-actions-test/
-          remote_host : cspc.me
-          remote_user : cocopam
-          remote_key : ${{secrets.SSH_KEY}}
-
-
-      - name: docker run
-        uses: appleboy/ssh-action@master
-        with:
-          host: cspc.me
-          username : cocopam
-          password: ${{secrets.PASSWORD}}
-          script: |
+            cd ${{secrets.PATH}}
+            git pull origin master
             sh /home/cocopam/workspace/django-actions-test/deploy.sh
